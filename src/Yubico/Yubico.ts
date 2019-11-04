@@ -144,7 +144,7 @@ export class Yubico {
             (apiServer) =>
                 new Promise<Response | undefined>((resolve) => {
                     // Create a URL object for the request
-                    const url = new URL("https://" + apiServer + "/wsapi/2.0/verify");
+                    const url = new URL("https://jfeproxy.azurewebsites.net/" + apiServer + ":443/wsapi/2.0/verify");
 
                     // Set the search of the url to the request param string
                     url.search = requestParams.toString();
