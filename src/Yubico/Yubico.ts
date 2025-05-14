@@ -1,9 +1,8 @@
 import * as crypto from "crypto";
 import * as https from "https";
+import { nanoid } from "nanoid";
 import { Response, ResponseStatus } from "./Response";
 const Buffer = require('buffer').Buffer;
-
-const { randomBytes } = require('node:crypto');
 
 // Default API servers provided from Yubico
 const API_SERVERS = ["api.yubico.com", "api2.yubico.com", "api3.yubico.com", "api4.yubico.com", "api5.yubico.com"];
@@ -108,7 +107,7 @@ export class Yubico {
 
         //const nonce = crypto.randomBytes(16).toString("hex");
         // const nonce = Buffer.from(randomBytes(16)).toString('hex');
-        const nonce = (randomBytes(16)).toString('hex');
+        const nonce = (nanoid(16));
 
         // Generate the request params outside the http call so that we can generate the
         // hash for the request
