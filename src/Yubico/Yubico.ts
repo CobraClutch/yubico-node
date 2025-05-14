@@ -1,8 +1,11 @@
-import * as crypto from "node:crypto";
+// import * as crypto from "node:crypto";
 import * as https from "https";
 import { nanoid } from "nanoid";
 import { Response, ResponseStatus } from "./Response";
 const Buffer = require('buffer').Buffer;
+const {
+  createHmac,
+} = require('node:crypto');
 
 // Default API servers provided from Yubico
 const API_SERVERS = ["api.yubico.com", "api2.yubico.com", "api3.yubico.com", "api4.yubico.com", "api5.yubico.com"];
@@ -131,8 +134,7 @@ export class Yubico {
         requestParams.sort();
 
         // Create and append the hash
-        const hash = crypto
-            .createHmac("sha1", Buffer.from(this.secret, "base64"))
+        const hash = createHmac("sha1", Buffer.from(this.secret, "base64"))
             .update(requestParams.toString())
             .digest("base64");
 
