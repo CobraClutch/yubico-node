@@ -131,10 +131,10 @@ export class Yubico {
         requestParams.sort();
 
         // Create and append the hash
-        const hash = new Buffer(crypto
+        const hash = crypto
             .createHmac("sha1", Buffer.from(this.secret, "base64"))
             .update(requestParams.toString())
-            .digest("base64"));
+            .digest("base64");
 
         requestParams.append("h", hash);
 
