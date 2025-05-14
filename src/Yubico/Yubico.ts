@@ -2,6 +2,7 @@ import * as crypto from "crypto";
 import {randomBytes} from "node:crypto";
 import * as https from "https";
 import { Response, ResponseStatus } from "./Response";
+const Buffer = require('buffer').Buffer;
 
 
 // Default API servers provided from Yubico
