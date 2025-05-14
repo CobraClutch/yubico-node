@@ -22,8 +22,5 @@
         "lint": "tslint -p tsconfig.json",
         "prepare": "npm run build",
         "prepublishOnly": "npm run lint"
-    },
-    "dependencies": {
-        "create-hmac": "^1.1.7"
     }
 }
