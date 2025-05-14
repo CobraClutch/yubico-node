@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "es2022",
+        "target": "es2020",
+        "module": "es2020",
+        "moduleResolution": "node",
         "declaration": true,
         "outDir": "./dist",
-        "strict": true
+        "strict": true,
+        "types": ["node"]
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*", "vite-env.d.ts"]
 }

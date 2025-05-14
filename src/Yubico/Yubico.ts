@@ -59,37 +59,37 @@ export class Yubico {
         if (options && options.clientId) {
             this.clientId = options.clientId;
         } else {
-            if (!import.meta.env.VITE_APP_.YUBICO_CLIENT_ID) {
+            if (!import.meta.env.VITE_APP_YUBICO_CLIENT_ID) {
                 throw new Error("Either clientId must be set in the constructor, or YUBICO_CLIENT_ID set as an environment variable");
             }
-            this.clientId = import.meta.env.VITE_APP_.YUBICO_CLIENT_ID;
+            this.clientId = import.meta.env.VITE_APP_YUBICO_CLIENT_ID;
         }
 
         if (options && options.secret) {
             this.secret = options.secret;
         } else {
-            if (!import.meta.env.VITE_APP_.YUBICO_SECRET) {
+            if (!import.meta.env.VITE_APP_YUBICO_SECRET) {
                 throw new Error("Either clientId must be set in the constructor, or YUBICO_SECRET set as an environment variable");
             }
-            this.secret = import.meta.env.VITE_APP_.YUBICO_SECRET;
+            this.secret = import.meta.env.VITE_APP_YUBICO_SECRET;
         }
 
         if (options && options.sl) {
             this.sl = options.sl;
         } else {
-            this.sl = import.meta.env.VITE_APP_.YUBICO_SL as SL;
+            this.sl = import.meta.env.VITE_APP_YUBICO_SL as SL;
         }
 
         if (options && options.timeout) {
             this.timeout = options.timeout;
         } else {
-            this.timeout = import.meta.env.VITE_APP_.YUBICO_TIMEOUT ? parseInt(import.meta.env.VITE_APP_.YUBICO_TIMEOUT, 10) : undefined;
+            this.timeout = import.meta.env.VITE_APP_YUBICO_TIMEOUT ? parseInt(import.meta.env.VITE_APP_YUBICO_TIMEOUT, 10) : undefined;
         }
 
         if (options && options.apiServers) {
             this.apiServers = options.apiServers;
         } else {
-            this.apiServers = import.meta.env.VITE_APP_.YUBICO_API_SERVERS ? import.meta.env.VITE_APP_.YUBICO_API_SERVERS.split(",") : API_SERVERS;
+            this.apiServers = import.meta.env.VITE_APP_YUBICO_API_SERVERS ? import.meta.env.VITE_APP_YUBICO_API_SERVERS.split(",") : API_SERVERS;
         }
     }
 
