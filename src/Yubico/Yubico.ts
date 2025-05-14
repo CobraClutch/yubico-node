@@ -107,7 +107,7 @@ export class Yubico {
         // generate 20 bytes and convert it to 40 characters
 
         //const nonce = crypto.randomBytes(16).toString("hex");
-        const nonce = Buffer.from(randomBytes(length)).toString('hex');
+        const nonce = Buffer.from(randomBytes(16)).toString('hex');
 
         // Generate the request params outside the http call so that we can generate the
         // hash for the request
