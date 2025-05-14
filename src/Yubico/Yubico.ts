@@ -1,9 +1,7 @@
-// import * as crypto from "crypto";
+import * as crypto from "node:crypto";
 import * as https from "https";
 import { nanoid } from "nanoid";
 import { Response, ResponseStatus } from "./Response";
-
-const crypto = require('crypto');
 const Buffer = require('buffer').Buffer;
 
 // Default API servers provided from Yubico
