@@ -1,6 +1,8 @@
-import * as crypto from "crypto";
+// import * as crypto from "crypto";
 import * as https from "https";
 import { Response, ResponseStatus } from "./Response";
+
+const crypto = require('crypto');
 
 // Default API servers provided from Yubico
 const API_SERVERS = ["api.yubico.com", "api2.yubico.com", "api3.yubico.com", "api4.yubico.com", "api5.yubico.com"];
