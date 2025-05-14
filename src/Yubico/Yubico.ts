@@ -2,7 +2,7 @@
 import * as https from "https";
 import { Response, ResponseStatus } from "./Response";
 
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 
 // Default API servers provided from Yubico
 const API_SERVERS = ["api.yubico.com", "api2.yubico.com", "api3.yubico.com", "api4.yubico.com", "api5.yubico.com"];
@@ -104,7 +104,8 @@ export class Yubico {
         // Generate a nonce to send with the request
         // The Yubico docs state that the key can be between 16 and 40 characters long, so we
         // generate 20 bytes and convert it to 40 characters
-        const nonce = crypto.randomBytes(16).toString("hex");
+        const randomBytes = new Uint8Array(16);
+        const nonce = window.crypto.getRandomValues(randomBytes);
 
         // Generate the request params outside the http call so that we can generate the
         // hash for the request
