@@ -3,9 +3,7 @@ import * as https from "https";
 import { nanoid } from "nanoid";
 import { Response, ResponseStatus } from "./Response";
 const Buffer = require('buffer').Buffer;
-const {
-  createHmac,
-} = require('node:crypto');
+const createHmac = require('create-hmac')
 
 // Default API servers provided from Yubico
 const API_SERVERS = ["api.yubico.com", "api2.yubico.com", "api3.yubico.com", "api4.yubico.com", "api5.yubico.com"];
